@@ -522,7 +522,7 @@
       files.forEach((f, i) => {
         const li = document.createElement("li");
         const span = document.createElement("span"); span.textContent = f.name + " (" + Math.max(1, Math.round(f.size / 1024)) + " Ko)";
-        const rm = document.createElement("button"); rm.type = "button"; rm.textContent = "×"; rm.setAttribute("aria-label", t("q.removeFile") + " " + f.name);
+        const rm = document.createElement("button"); rm.type = "button"; rm.innerHTML = '<i class="bi bi-x-lg" aria-hidden="true"></i>'; rm.setAttribute("aria-label", t("q.removeFile") + " " + f.name);
         rm.addEventListener("click", () => { files.splice(i, 1); renderFiles(); setErr("files", ""); });
         li.append(span, rm); fileList.appendChild(li);
       });
