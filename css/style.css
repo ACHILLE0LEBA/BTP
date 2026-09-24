@@ -1,3 +1,19 @@
+/* ============================================================
+   FONTS — Aeromatics (main hero title) + Averta (everything else)
+   Put the font files in /fonts (see fonts/README.txt). Until they are
+   there, the previous fonts (Archivo / Inter) are used as fallback.
+   ============================================================ */
+@font-face { font-family: 'Aeromatics'; font-weight: 400; font-style: normal; font-display: swap;
+  src: local('Aeromatics'), local('Aeromatics Regular'), url('../fonts/Aeromatics.woff2') format('woff2'), url('../fonts/Aeromatics.woff') format('woff'), url('../fonts/Aeromatics.ttf') format('truetype'), url('../fonts/Aeromatics.otf') format('opentype'); }
+@font-face { font-family: 'Averta'; font-weight: 400; font-style: normal; font-display: swap;
+  src: local('Averta Regular'), local('Averta-Regular'), local('Averta'), url('../fonts/Averta-Regular.woff2') format('woff2'), url('../fonts/Averta-Regular.woff') format('woff'), url('../fonts/Averta-Regular.ttf') format('truetype'), url('../fonts/Averta-Regular.otf') format('opentype'); }
+@font-face { font-family: 'Averta'; font-weight: 600; font-style: normal; font-display: swap;
+  src: local('Averta Semibold'), local('Averta-Semibold'), url('../fonts/Averta-Semibold.woff2') format('woff2'), url('../fonts/Averta-Semibold.woff') format('woff'), url('../fonts/Averta-Semibold.ttf') format('truetype'), url('../fonts/Averta-Semibold.otf') format('opentype'); }
+@font-face { font-family: 'Averta'; font-weight: 700; font-style: normal; font-display: swap;
+  src: local('Averta Bold'), local('Averta-Bold'), url('../fonts/Averta-Bold.woff2') format('woff2'), url('../fonts/Averta-Bold.woff') format('woff'), url('../fonts/Averta-Bold.ttf') format('truetype'), url('../fonts/Averta-Bold.otf') format('opentype'); }
+@font-face { font-family: 'Averta'; font-weight: 800; font-style: normal; font-display: swap;
+  src: local('Averta ExtraBold'), local('Averta-ExtraBold'), url('../fonts/Averta-ExtraBold.woff2') format('woff2'), url('../fonts/Averta-ExtraBold.woff') format('woff'), url('../fonts/Averta-ExtraBold.ttf') format('truetype'), url('../fonts/Averta-ExtraBold.otf') format('opentype'); }
+
 /* ==========================================================
    NEW BTP SARL — Stylesheet
    Design tokens are official brand colors extracted from the
@@ -25,8 +41,9 @@
 
   --newbtp-border: rgba(18, 74, 29, 0.16);
 
-  --font-head: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
-  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-head: 'Averta', 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Aeromatics', 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Averta', 'Inter', 'Helvetica Neue', Arial, sans-serif;
 
   --container: 1280px;
   --header-h: 96px;
@@ -262,7 +279,7 @@ section { padding: 96px 0; }
 .hero__content--hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 .hero__content.is-switching { opacity: 0; transform: translateY(16px); pointer-events: none; }
 /* "Découvrez nos récents projets..." — now the large hero title, per updated spec */
-.hero__eyebrow { font-family: var(--font-head); font-weight: 800; letter-spacing: .01em; color: #fff; margin: 0 auto 16px; font-size: clamp(26px, 4vw, 46px); line-height: 1.18; max-width: 18ch; }
+.hero__eyebrow { font-family: var(--font-display); font-weight: 400; font-synthesis: none; letter-spacing: .01em; color: #fff; margin: 0 auto 16px; font-size: clamp(26px, 4vw, 46px); line-height: 1.18; max-width: 18ch; }
 /* Per-slide project name — now the smaller subtitle, per updated spec */
 .hero__title { font-family: var(--font-body); font-size: clamp(14px, 1.6vw, 18px); font-weight: 500; color: #fff; opacity: .92; max-width: 46ch; margin: 0 auto 30px; }
 .hero__cta-row { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
